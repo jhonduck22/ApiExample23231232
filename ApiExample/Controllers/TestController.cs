@@ -42,14 +42,14 @@ namespace ApiExample.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Policy = "AdministratorOnly")]
         public IActionResult IdentityTestToken()
         {
             return Ok("Administrator Response");
         }
 
         [HttpGet]
-        [Authorize(Roles = "TestingIdentity")]
+        [Authorize(Policy = "TestingIdentityOnly")]
         public IActionResult IdentityTestStore()
         {
             return Ok("UerStore Response");
